@@ -1,0 +1,19 @@
+.table-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    &__show{
+        display: flex;
+        align-items: center;
+
+        &__label{
+            margin-right: 0.5rem;
+        }
+
+        &__input{
+            width: 70px;
+        }
+    }
+}

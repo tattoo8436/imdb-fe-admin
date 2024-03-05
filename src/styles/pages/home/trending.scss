@@ -1,0 +1,40 @@
+.trending {
+    .movie-item {
+        display: flex;
+        cursor: pointer;
+
+        &__image {
+            width: 80px;
+            height: 120px;
+        }
+
+        &__detail {
+            margin-left: 1rem;
+
+            &__name {
+                color: $primary;
+                font-size: 1.3rem;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+            }
+
+            &__duration {
+                margin-bottom: 0.5rem;
+            }
+
+            &__score {
+                margin-bottom: 0.5rem;
+
+                .anticon {
+                    color: $yellow;
+                    font-size: 20px;
+                    margin-right: 0.5rem;
+                }
+            }
+
+            &__description {
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+}

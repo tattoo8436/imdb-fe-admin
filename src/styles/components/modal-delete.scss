@@ -1,0 +1,15 @@
+.modal-delete{
+    .modal{
+        &__content{
+            text-align: center;
+
+            &__icon{
+                margin-bottom: 1rem;
+                
+                svg{
+                    font-size: 40px;
+                }
+            }
+        }
+    }
+}

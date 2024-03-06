@@ -170,6 +170,9 @@ const ModalEdit = (props: IProps) => {
                     placeholder="Chọn ngày sinh"
                     className="form__item__input"
                     format="DD/MM/YYYY"
+                    disabledDate={(date) => {
+                      return date >= dayjs();
+                    }}
                   />
                 )}
               />

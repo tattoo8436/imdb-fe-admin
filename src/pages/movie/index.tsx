@@ -94,7 +94,7 @@ const Movie = () => {
   const fetchMovie = async () => {
     setTimeout(() => {
       gridRef.current?.api?.showLoadingOverlay();
-    }, 10);
+    }, 0);
     setListMovies((pre) => ({ ...pre, loading: true }));
     try {
       const { data } = await movieApi.searchMovie({
@@ -108,6 +108,7 @@ const Movie = () => {
         data: data?.data,
         error: null,
       });
+      gridRef.current?.api?.hideOverlay();
     } catch (error) {
       console.log(error);
     }

@@ -68,7 +68,7 @@ const Genre = () => {
   const fetchGenre = async () => {
     setTimeout(() => {
       gridRef.current?.api?.showLoadingOverlay();
-    }, 10);
+    }, 0);
     setListGenres((pre) => ({ ...pre, loading: true }));
     try {
       const { data } = await genreApi.searchGenre(search);
@@ -79,6 +79,7 @@ const Genre = () => {
         data: data?.data,
         error: null,
       });
+      gridRef.current?.api?.hideOverlay();
     } catch (error) {
       console.log(error);
       setListGenres({

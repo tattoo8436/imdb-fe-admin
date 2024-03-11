@@ -66,7 +66,7 @@ const Actor = () => {
   const fetchActor = async () => {
     setTimeout(() => {
       gridRef.current?.api?.showLoadingOverlay();
-    }, 10);
+    }, 0);
     setListActors((pre) => ({ ...pre, loading: false }));
     try {
       const { data } = await actorApi.searchActor(search);
@@ -77,6 +77,7 @@ const Actor = () => {
         data: data?.data,
         error: null,
       });
+      gridRef.current?.api?.hideOverlay();
     } catch (error: any) {
       console.log(error);
       setListActors({

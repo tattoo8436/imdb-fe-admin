@@ -61,13 +61,10 @@ const Episode = () => {
   const fetchMovie = async () => {
     setTimeout(() => {
       gridRef.current?.api?.showLoadingOverlay();
-    }, 10);
+    }, 0);
     try {
       const { data } = await movieApi.getMovieById(movieId);
       console.log({ data });
-      // setListSeason(
-      //   Array.from({ length: data?.numberSeason }, (_, index) => index + 1)
-      // );
       setListSeason(
         Array.from({ length: data?.numberSeason }).map((_, index) => ({
           label: `Mùa ${index + 1}`,
@@ -80,6 +77,7 @@ const Episode = () => {
           ?.sort((a: any, b: any) => a.id - b.id)
       );
       setMovie(data);
+      gridRef.current?.api?.hideOverlay();
     } catch (error) {
       console.log(error);
     }

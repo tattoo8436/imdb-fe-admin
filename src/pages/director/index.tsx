@@ -65,7 +65,7 @@ const Director = () => {
   const fetchDirector = async () => {
     setTimeout(() => {
       gridRef.current?.api?.showLoadingOverlay();
-    }, 10);
+    }, 0);
     setListDirectors((pre) => ({ ...pre, loading: false }));
     try {
       const { data } = await directorApi.searchDirector(search);
@@ -76,6 +76,7 @@ const Director = () => {
         data: data?.data,
         error: null,
       });
+      gridRef.current?.api?.hideOverlay();
     } catch (error: any) {
       console.log(error);
       setListDirectors({

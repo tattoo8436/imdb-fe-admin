@@ -10,8 +10,8 @@ import { IAccountLogin } from "../../utils/type";
 const Login = () => {
   const hookForm = useForm({
     defaultValues: {
-      username: "admin",
-      password: "admin",
+      username: "admintest",
+      password: "123",
     },
     mode: "onChange",
   });
